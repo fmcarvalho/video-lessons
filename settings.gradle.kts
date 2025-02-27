@@ -14,3 +14,4 @@ rootProject.name = "lessons"
 include("lesson03-domain-model")
 include("lesson03-reflect-kotlin")
 include("lesson04-reflect-java")
+include("lesson05-logger")
