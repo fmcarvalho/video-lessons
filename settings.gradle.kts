@@ -11,4 +11,5 @@ plugins {
 }
 
 rootProject.name = "lessons"
+include("lesson03-domain-model")
 include("lesson03-reflect-kotlin")
