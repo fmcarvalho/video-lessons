@@ -15,6 +15,9 @@ dependencies {
     // Kotlin Reflection
     implementation(kotlin("reflect"))
 
+    // Test dependency for domain entities
+    testImplementation(project(":lesson03-domain-model"))
+
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 
