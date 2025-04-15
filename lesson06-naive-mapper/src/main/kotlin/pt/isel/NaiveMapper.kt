@@ -3,13 +3,11 @@ package pt.isel
 import kotlin.reflect.KClass
 import kotlin.reflect.KMutableProperty
 import kotlin.reflect.KProperty
-import kotlin.reflect.KProperty1
 import kotlin.reflect.full.createInstance
 import kotlin.reflect.full.findAnnotations
 import kotlin.reflect.full.memberProperties
 
-
-fun Any.mapTo(destType: KClass<*>) : Any {
+fun Any.mapTo(destType: KClass<*>): Any {
     // 1st - Instantiate destType
     val dest = destType.createInstance()
 
@@ -31,10 +29,13 @@ fun Any.mapTo(destType: KClass<*>) : Any {
     return dest
 }
 
-fun matchProps(srcProp: KProperty<*>, destProp: KMutableProperty<*>): Boolean {
-    return if(destProp.returnType != srcProp.returnType) {
+fun matchProps(
+    srcProp: KProperty<*>,
+    destProp: KMutableProperty<*>,
+): Boolean =
+    if (destProp.returnType != srcProp.returnType) {
         false
-    } else if(destProp.name == srcProp.name) {
+    } else if (destProp.name == srcProp.name) {
         true
     } else {
         srcProp
@@ -42,4 +43,3 @@ fun matchProps(srcProp: KProperty<*>, destProp: KMutableProperty<*>): Boolean {
             .firstOrNull()
             ?.name == destProp.name
     }
-}
